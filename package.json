@@ -1,0 +1,22 @@
+{
+  "name": "dpv-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:admin": "npm run dev -w admin-panel",
+    "dev:dpv": "npm run dev -w dpv-app",
+    "build": "npm run build -w @dpv/license-crypto && npm run build -w admin-panel && npm run build -w dpv-app",
+    "build:admin": "npm run build -w @dpv/license-crypto && npm run build -w admin-panel",
+    "build:dpv": "npm run build -w @dpv/license-crypto && npm run build -w dpv-app",
+    "lint": "npm run lint -w admin-panel && npm run lint -w dpv-app"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

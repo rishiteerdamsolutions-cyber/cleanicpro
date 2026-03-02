@@ -1,0 +1,10 @@
+{
+  "name": "Doctor Prescription Voice",
+  "short_name": "DPV",
+  "description": "Offline-first voice prescription app for hospitals",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
