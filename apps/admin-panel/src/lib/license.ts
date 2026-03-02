@@ -11,10 +11,11 @@ export function signHospitalLicense(
   hospitalId: string,
   maxDevices: number
 ): string {
-  const privateKey = process.env.JWT_PRIVATE_KEY;
+  let privateKey = process.env.JWT_PRIVATE_KEY;
   if (!privateKey) {
     throw new Error("JWT_PRIVATE_KEY not configured. Generate RSA key pair.");
   }
+  privateKey = privateKey.replace(/\\n/g, "\n");
   return signLicenseToken(
     { licenseKey, hospitalId, maxDevices },
     privateKey

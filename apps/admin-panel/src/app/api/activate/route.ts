@@ -4,8 +4,8 @@ import Hospital from "@/models/Hospital";
 import Device from "@/models/Device";
 import { verifyLicenseToken, signActivationToken } from "@dpv/license-crypto";
 
-const JWT_PUBLIC_KEY = process.env.JWT_PUBLIC_KEY;
-const JWT_PRIVATE_KEY = process.env.JWT_PRIVATE_KEY;
+const JWT_PUBLIC_KEY = process.env.JWT_PUBLIC_KEY?.replace(/\\n/g, "\n");
+const JWT_PRIVATE_KEY = process.env.JWT_PRIVATE_KEY?.replace(/\\n/g, "\n");
 
 export async function POST(request: NextRequest) {
   try {
